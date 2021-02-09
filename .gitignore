@@ -1,0 +1,49 @@
+# IDE
+.idea/
+.vscode/
+
+# Python 
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.env/
+.venv/
+env/
+venv/
+.ipynb_checkpoints
+
+# Latex files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.dvi
+*.xdv
+*-converted-to.*
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.bbl
+*.blg
+
+# Compressed Files
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Pickle Files
+*.p
