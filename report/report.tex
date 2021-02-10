@@ -74,14 +74,99 @@ Where pop(x) is the population in x. Since the bounding circle cuts through some
 
 Since these two measures are different, it is interesting to compare them to see when they are similar and when they differ, explain why that is the case, and conclude whether those districts are gerrymandered or not. Using the current congressional districts, here are the data points found (Pennsylvania maps are from 2016).
 
+
 \section{Results}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
+	\caption{Plot of Population Fatness v. PolsbyPopper}
+	\label{fig:datapoints}
+\end{figure}
 
 %We need a better name for this section
 \section{Research}
-From this set, we can proceed to divide the plane into four “quadrants”, and find specific examples for each. The first quadrant consists of districts that have both high Polsby-Popper and fatness scores, in other words, “ideal” districts. For example, PA-02 (all images from govtrack.us) is in the northeast of Philadelphia, and has short borders. According to most observers, this would be considered a compact district. The fatness measure is particularly good thanks to its size and location: it is in the middle of a densely populated area, so its size and the size of its bounded circle are small, and it is on the border of the state - the model does not take into account the population of New Jersey. While it takes advantage of this situation, based on these criteria alone, it would not be considered gerrymandering. (However, Pennsylvania was redistricted in 2018 because among many others this district, where more than 90\% of voters backed Clinton in 2016. Another example is TX-16, centered around the city of El Paso, which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district.
+From this set, we can proceed to divide the plane into four “quadrants”, and find specific examples for each. The first quadrant consists of districts that have both high Polsby-Popper and fatness scores, in other words, “ideal” districts. For example, PA-02 is in the northeast of Philadelphia, and has short borders.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/PA-02.png}
+	\caption{Pennsylvania District 02}
+	\label{fig:pa02border}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/PA-02-SurroundingArea.png}
+	\caption{PA-02 Political Results}
+	\label{fig:pa02political}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/PA-02-Bounding Circle.png}
+	\caption{PA-02 Bounding Circle}
+	\label{fig:pa02boundingCircle}
+\end{figure}
+
+According to most observers, this would be considered a compact district. The fatness measure is particularly good thanks to its size and location: it is in the middle of a densely populated area, so its size and the size of its bounded circle are small, and it is on the border of the state - the model does not take into account the population of New Jersey. While it takes advantage of this situation, based on these criteria alone, it would not be considered gerrymandering. (However, Pennsylvania was redistricted in 2018 because among many others this district, where more than 90\% of voters backed Clinton in 2016. 
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-16.png}
+	\caption{Texas District 16}
+	\label{fig:tx16border}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-16-SurroundingArea.png}
+	\caption{TX-16 Political Results}
+	\label{fig:tx16political}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-16-BoundingCircle.png}
+	\caption{TX-16 Bounding Circle}
+	\label{fig:tx16boundingCircle}
+\end{figure}
+
+Another example is TX-16, centered around the city of El Paso, which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district.
 
 
-We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness, including the two that we present in this paper. OH-06 is a good example of this: it covers all of Southeast Ohio, but is unnecessarily stretched out, with several indents both ways from neighboring districts. For example, Athens or Youngstown, places that lean Democratic, are barely out of the district. Once again in Ohio, OH-04 is also quite serpentine in shape and obviously avoids multiple areas, such as the indent made by OH-05, or the coast that is monopolized by OH-09 (it is worth mentioning that OH-09 is the only Democratic-leaning district of Northwest Ohio). As neighboring districts lean Republican like OH-04, we can see that small portions of urban areas such as Lorain or Strongsville were incorporated, but are not enough to switch the vote. What is currently Rep. Jim Jordan’s district clearly could instead have taken the large swaths of Republican land that create a hole in the middle of the district. It’s too bad this district is not in the other state that begins with an O, as this “duck” district would have been a good explanation for that state’s university’s mascot.
+We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness, including the two that we present in this paper.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-06.png}
+	\caption{Ohio District 06}
+	\label{fig:oh06border}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-06-SurroundingArea.png}
+	\caption{OH-06 Political Results}
+	\label{fig:oh06political}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-06-BoundingCircle.png}
+	\caption{OH-06 Bounding Circle}
+	\label{fig:oh06boundingCircle}
+\end{figure}
+
+OH-06 is a good example of this: it covers all of Southeast Ohio, but is unnecessarily stretched out, with several indents both ways from neighboring districts. For example, Athens or Youngstown, places that lean Democratic, are barely out of the district. Once again in Ohio, OH-04 is also quite serpentine in shape and obviously avoids multiple areas, such as the indent made by OH-05, or the coast that is monopolized by OH-09 (it is worth mentioning that OH-09 is the only Democratic-leaning district of Northwest Ohio). As neighboring districts lean Republican like OH-04, we can see that small portions of urban areas such as Lorain or Strongsville were incorporated, but are not enough to switch the vote. What is currently Rep. Jim Jordan’s district clearly could instead have taken the large swaths of Republican land that create a hole in the middle of the district. It’s too bad this district is not in the other state that begins with an O, as this “duck” district would have been a good explanation for that state’s university’s mascot.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-04.png}
+	\caption{Ohio District 04}
+	\label{fig:oh04border}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-04-SurroundingArea.png}
+	\caption{OH-04 Political Results}
+	\label{fig:oh04political}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-04-BoundingCircle.png}
+	\caption{OH-04 Bounding Circle}
+	\label{fig:oh04boundingCircle}
+\end{figure}
 
 As an aside: OH-04 has a very large prison and thousands of African American inmates that cannot vote. This also clearly does not respect county lines in the East (but look at OH-11, and Summit County, with four districts and no Congress representative…)
 https://www.wksu.org/government-politics/2019-11-15/how-did-ohios-most-liberal-city-end-up-with-its-most-conservative-congressman
