@@ -24,7 +24,7 @@
 \author{
 	Darren Kong \\ 110770716
 	\and 
-	Hugo Mainguy \\ ID HERE
+	Hugo Mainguy \\ 111747982
 	\and 
 	Jeffery Zhong \\ ID HERE
 	\vspace{3ex}
@@ -70,7 +70,7 @@ To calculate this measure, we use the following formula:
 
 Where pop(x) is the population in x. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the circle is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. This only takes into account the population that is inside the state, as the population outside of the state but inside the bounding circle should not influence the districts. Once again, a perfect score of 1 comes when the district is a perfect circle, and a low score comes when the bounding circle encompasses many populous areas, large areas of land, or a combination of both.
 
-[We should probably include the code for the two measures here, if anyone feels like adding it. Actually, maybe after each measure, whatever is better.]
+%[We should probably include the code for the two measures here, if anyone feels like adding it. Actually, maybe after each measure, whatever is better.]%
 
 Since these two measures are different, it is interesting to compare them to see when they are similar and when they differ, explain why that is the case, and conclude whether those districts are gerrymandered or not. Using the current congressional districts, here are the data points found (Pennsylvania maps are from 2016).
 
@@ -167,6 +167,8 @@ OH-06 is a good example of this: it covers all of Southeast Ohio, but is unneces
 	\caption{OH-04 Bounding Circle}
 	\label{fig:oh04boundingCircle}
 \end{figure}
+
+%Needs better explaination and better citation
 
 As an aside: OH-04 has a very large prison and thousands of African American inmates that cannot vote. This also clearly does not respect county lines in the East (but look at OH-11, and Summit County, with four districts and no Congress representative…)
 https://www.wksu.org/government-politics/2019-11-15/how-did-ohios-most-liberal-city-end-up-with-its-most-conservative-congressman
