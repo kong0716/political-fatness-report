@@ -5,8 +5,10 @@ import numpy
 
 stateDistrictID = []
 fatness1 = []
+#fat2 is the idea of the population of the district over the population of the bounding circle 
 fatness2 = []
 fatness3 = []
+#fat4 improves on the idea of fat2 and weighs population on the edge of the circle less than the ones closer to the center
 fatness4 = []
 polsbyPopper = []
 with open('test.csv', newline='') as csvfile:
