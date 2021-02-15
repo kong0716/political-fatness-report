@@ -38,5 +38,5 @@ for i in range(len(stateDistrictID)):
 plt.ylim(ymin=0)  # this line
 plt.xlim(0)
 plt.xlabel('PolsbyPopper', fontsize=12)
-plt.ylabel('Fatness (Population)', fontsize=12)
+plt.ylabel('Weighted Fatness (Population)', fontsize=12)
 plt.show()
