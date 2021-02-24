@@ -78,34 +78,43 @@ Since these two measures are different, it is interesting to compare them to see
 \section{Results}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
+	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopper.png}
 	\caption{Plot of Population Fatness v. PolsbyPopper}
 	\label{fig:datapoints}
 \end{figure}
 
 %We need a better name for this section
 \section{Research}
-From this set, we can proceed to divide the plane into four “quadrants”, and find specific examples for each. The first quadrant consists of districts that have both high Polsby-Popper and fatness scores, in other words, “ideal” districts. For example, PA-02 is in the northeast of Philadelphia, and has short borders.
+From the results, we can see compare each district's Fatness score with its Polsby Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
+	\caption{Plot of Population Fatness v. PolsbyPopper Edited}
+	\label{fig:datapointsEdited}
+\end{figure}
+
+We will begin our look on the first quadrant, specifically NY25, NY15, and TX16. The district scores for both Fatness and Polsby Popper are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/PA-02.png}
-	\caption{Pennsylvania District 02}
-	\label{fig:pa02border}
+	\includegraphics[width=\linewidth]{./figures/NY-25-BoundingCircle.png}
+	\caption{NY-25 Bounding Circle}
+	\label{fig:ny25boundingCircle}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/PA-02-SurroundingArea.png}
-	\caption{PA-02 Political Results}
-	\label{fig:pa02political}
+	\includegraphics[width=\linewidth]{./figures/NY-15-BoundingCircle.png}
+	\caption{NY-15 Bounding Circle}
+	\label{fig:ny15boundingCircle}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/PA-02-Bounding Circle.png}
-	\caption{PA-02 Bounding Circle}
-	\label{fig:pa02boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/TX-16-BoundingCircle.png}
+	\caption{TX-16 Bounding Circle}
+	\label{fig:tx16boundingCircle}
 \end{figure}
 
-According to most observers, this would be considered a compact district. The fatness measure is particularly good thanks to its size and location: it is in the middle of a densely populated area, so its size and the size of its bounded circle are small, and it is on the border of the state - the model does not take into account the population of New Jersey. While it takes advantage of this situation, based on these criteria alone, it would not be considered gerrymandering. (However, Pennsylvania was redistricted in 2018 because among many others this district, where more than 90\% of voters backed Clinton in 2016. 
+
+These districts are all centered around a major population hub. NY25 is centered on Rochester, NY15 is centered on the Bronx, and TX16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. Specifically for the example of TX16,
+centered around the city of El Paso, which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/TX-16.png}
@@ -125,7 +134,7 @@ According to most observers, this would be considered a compact district. The fa
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
-Another example is TX-16, centered around the city of El Paso, which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district.
+
 
 
 We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness, including the two that we present in this paper.
