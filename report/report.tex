@@ -93,7 +93,7 @@ From the results, we can see compare each district's Fatness score with its Pols
 	\label{fig:datapointsEdited}
 \end{figure}
 
-We will begin our look on the first quadrant, specifically NY25, NY15, and TX16. The district scores for both Fatness and Polsby Popper are both high for these districts. It is rather easy to tell why.
+We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both Fatness and Polsby Popper are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/NY-25-BoundingCircle.png}
@@ -113,9 +113,9 @@ We will begin our look on the first quadrant, specifically NY25, NY15, and TX16.
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
-These districts are all centered around a major population hub. NY25 is centered on Rochester, NY15 is centered on the Bronx, and TX16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. 
+These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. 
 
-Specifically for the example of TX16 which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
+Specifically for the example of TX-16 which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/TX-16.png}
@@ -143,10 +143,10 @@ We now move onto the extremeties in the second quadrant. Specifically, many dist
 	\label{fig:oh03boundingCircle}
 \end{figure}
 
-We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby Popper gives it a low score. Polsby Popper's low score can be explained by the large perimeter that OH03 has relative to its area. The fact of the matter is OH03 is incredibly fractured on the city of Columbus. The fact that OH03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
+We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby Popper gives it a low score. Polsby Popper's low score can be explained by the large perimeter that OH-03 has relative to its area. The fact of the matter is OH-03 is incredibly fractured on the city of Columbus. The fact that OH-03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
 %https://www.aclu.org/sites/default/files/field_document/complaint_timestamped.pdf
 
-Furthermore, if we take a look at Ohio’s 11th congressional district, it has a similar Fatness score yet a lower Polsby Popper score. This again is easy to explain. The population of the district contains both the cities of Cleveland and Akron. There are no other major cities matching the population size near them.
+OH-11, the one with most of Cleveland, is heavily Democratic and connects two urban areas. The surrounding districts are barely Republican, and neighborhoods were carved carefully to ensure that this district would encompass as many Democrats as possible. Since Ohio’s map was drawn by a Republican state legislature, it is quite safe to assume that this is an attempt at gerrymandering. OH-03, in the heart of Columbus, suffers from the same issue: it is surrounded by two moderately Republican districts, OH-12 and OH-15, meaning that there is only one Democratic district in Columbus when there could be two with a different drawing.  While a potential excuse could be that this mostly follows the Columbus metropolitan area, it does not represent the will of the voters in the greater Columbus area quite fairly. 
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/OH-11-BoundingCircle.png}
@@ -219,7 +219,6 @@ PA-09 suffers from the same issues. It has a high PolsbyPopper score due to its 
 
 This map has been redrawn already during the decade, so is less gerrymandered than it used to be, and in the middle of rural Pennsylvania, losing some compactness mostly due to following county lines, this is not the main culprit. 
 
-We now move our focus to the second quadrant, which is more populated than the fourth. One of its representants is CA-26, which achieves a low Polsby-Popper but high compactness score. The low Polsby-Popper comes from the fact that the borders are rather jagged, especially with CA-25, but the area around it is rather sparsely populated, as can be seen by the size of the districts. Furthermore, its bounding circle is not much bigger than the circle itself. As all of this area is Democrat, there is no significant evidence of gerrymandering, and this mostly follows county lines. Since it seems that there is always something to say about Ohio, we will now go back to Cleveland. OH-11, the one with most of Cleveland, is heavily Democratic and connects two urban areas. The surrounding districts are barely Republican, and neighborhoods were carved carefully to ensure that this district would encompass as many Democrats as possible. Since Ohio’s map was drawn by a Republican state legislature, it is quite safe to assume that this is an attempt at gerrymandering. OH-03, in the heart of Columbus, suffers from the same issue: it is surrounded by two moderately Republican districts, OH-12 and OH-15, meaning that there is only one Democratic district in Columbus when there could be two with a different drawing.  While a potential excuse could be that this mostly follows the Columbus metropolitan area, it does not represent the will of the voters in the greater Columbus area quite fairly. 
 
 Before concluding our work on the two measures, we will go to a somewhat miscellaneous example in California. CA-08 scores the worst fatness score across all ten states studied, and the Polsby-Popper score is mediocre as well. It is true that this is perhaps not the best district, however, its score is harmed by what is going on behind the district lines. While it does have a rather jagged western boundary and a rather long rectilinear shape, the fatness score is deserving of the deeper analysis. It is no coincidence that the worst fatness measure is in the most populous state, and specifically, one with both very densely and sparsely populated areas. The diameter of the bounding circle of this large district is almost the northeast border of the district - this means that besides northern California and the Bay Area, virtually all of California is within that bounding circle. The fatness score is close to 0.025, which would indicate that about a fortieth of the bounding circle population is within the district: this means there are about forty districts inside of this circle (note that since we do not consider populations outside of the state, this would be impossible in any other state)! 
 
