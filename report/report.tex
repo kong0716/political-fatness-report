@@ -86,6 +86,7 @@ Since these two measures are different, it is interesting to compare them to see
 %We need a better name for this section
 \section{Research}
 From the results, we can see compare each district's Fatness score with its Polsby Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
+
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
 	\caption{Plot of Population Fatness v. PolsbyPopper Edited}
@@ -112,13 +113,13 @@ We will begin our look on the first quadrant, specifically NY25, NY15, and TX16.
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
+These districts are all centered around a major population hub. NY25 is centered on Rochester, NY15 is centered on the Bronx, and TX16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. 
 
-These districts are all centered around a major population hub. NY25 is centered on Rochester, NY15 is centered on the Bronx, and TX16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. Specifically for the example of TX16,
-centered around the city of El Paso, which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
+Specifically for the example of TX16 which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/TX-16.png}
-	\caption{Texas District 16}
+	\caption{TX-16}
 	\label{fig:tx16border}
 \end{figure}
 
@@ -134,11 +135,29 @@ centered around the city of El Paso, which takes advantage of being small and de
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
+We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby Popper score and yet a relatively high Fatness score.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-03-BoundingCircle.png}
+	\caption{OH-03 Bounding Circle}
+	\label{fig:oh03boundingCircle}
+\end{figure}
+
+We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby Popper gives it a low score. Polsby Popper's low score can be explained by the large perimeter that OH03 has relative to its area. The fact of the matter is OH03 is incredibly fractured on the city of Columbus. The fact that OH03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
+%https://www.aclu.org/sites/default/files/field_document/complaint_timestamped.pdf
+
+Furthermore, if we take a look at Ohio’s 11th congressional district, it has a similar Fatness score yet a lower Polsby Popper score. This again is easy to explain. The population of the district contains both the cities of Cleveland and Akron. There are no other major cities matching the population size near them.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-11-BoundingCircle.png}
+	\caption{OH-11 Bounding Circle}
+	\label{fig:oh11boundingCircle}
+\end{figure}
 
 
+%Need to explain why Ohio 16 is average in the Fatness score
 
-We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness, including the two that we present in this paper.
-
+We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness.
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/OH-06.png}
 	\caption{Ohio District 06}
