@@ -22,18 +22,13 @@ with open('test.csv', newline='') as csvfile:
         fatness4.append(float(row['fatness4']))
         polsbyPopper.append(float(row['polsbyPopper']))
 
-fatness1 = np.array(fatness1).round(decimals=6)
-fatness2 = np.array(fatness2).round(decimals=6)
-fatness3 = np.array(fatness3).round(decimals=6)
-polsbyPopper = np.array(polsbyPopper).round(decimals=6)
-
 for i in range(len(stateDistrictID)):
     w = fatness4[i]
     x = polsbyPopper[i]
     y = fatness1[i]
     z = fatness2[i]
-    plt.plot(x, w, 'bo')
-    plt.text(x * (1 + 0.007), w * (1 + 0.007) , stateDistrictID[i], fontsize=6)
+    plt.plot(x, z, 'bo')
+    plt.text(x * (1 + 0.007), z * (1 + 0.007) , stateDistrictID[i], fontsize=6)
 
 plt.ylim(ymin=0)
 plt.xlim(0)
