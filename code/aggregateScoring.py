@@ -29,21 +29,33 @@ with open('test.csv', newline='') as csvfile:
 
 aggregateFatScore = dict()
 aggregatePPScore = dict()
+stateDistrictAmount = dict()
 
 for i in range(len(stateDistrictID)):
     state = stateDistrictID[i][:2]
     if state in aggregateFatScore:
         #Running sum of score or any median, mean to get the score of the entire state
-        aggregateFatScore[state] *= fatness2[i]
-        aggregatePPScore[state] *= polsbyPopper[i]
+        aggregateFatScore[state] += fatness2[i]
+        aggregatePPScore[state] += polsbyPopper[i]
+        stateDistrictAmount[state] += 1
     else:
         aggregateFatScore[state] = fatness2[i]
         aggregatePPScore[state] = polsbyPopper[i]
-
+        stateDistrictAmount[state] = 0
+meanFatScore = dict()
+meanPPScore = dict()
+states = list(stateDistrictAmount.keys())
+for i in range(len(states)):
+    state = states[i]
+    meanFatScore[state] = aggregateFatScore[state] / stateDistrictAmount[state]
+    meanPPScore[state] = aggregatePPScore[state] / stateDistrictAmount[state]
 labels = aggregateFatScore.keys()
+'''
 populationFatness = aggregateFatScore.values()
 ppScores = aggregatePPScore.values()
-
+'''
+populationFatness = meanFatScore.values()
+ppScores = meanPPScore.values()
 
 x = np.arange(len(labels))
 width = .35
