@@ -3,11 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import numpy
 
-import csv
-import numpy as np
-import matplotlib.pyplot as plt
-import numpy
-
 stateDistrictID = []
 fatness1 = []
 #fat2 is the idea of the population of the district over the population of the bounding circle 
@@ -35,13 +30,14 @@ for i in range(len(stateDistrictID)):
     state = stateDistrictID[i][:2]
     if state in aggregateFatScore:
         #Running sum of score or any median, mean to get the score of the entire state
-        aggregateFatScore[state] += fatness2[i]
+        aggregateFatScore[state] += fatness3[i]
         aggregatePPScore[state] += polsbyPopper[i]
         stateDistrictAmount[state] += 1
     else:
-        aggregateFatScore[state] = fatness2[i]
+        aggregateFatScore[state] = fatness3[i]
         aggregatePPScore[state] = polsbyPopper[i]
         stateDistrictAmount[state] = 0
+
 meanFatScore = dict()
 meanPPScore = dict()
 states = list(stateDistrictAmount.keys())
@@ -49,24 +45,28 @@ for i in range(len(states)):
     state = states[i]
     meanFatScore[state] = aggregateFatScore[state] / stateDistrictAmount[state]
     meanPPScore[state] = aggregatePPScore[state] / stateDistrictAmount[state]
-labels = aggregateFatScore.keys()
 '''
+labels = aggregateFatScore.keys()
 populationFatness = aggregateFatScore.values()
 ppScores = aggregatePPScore.values()
 '''
+# Sorts the values by fatness
+outputSortedIndices = np.argsort(list(meanFatScore.values()))
+meanFatScore = dict(sorted(meanFatScore.items(), key=lambda item: item[1]))
+labels = meanFatScore.keys()
 populationFatness = meanFatScore.values()
-ppScores = meanPPScore.values()
+ppScores = np.array(list(meanPPScore.values()))[outputSortedIndices]
 
 x = np.arange(len(labels))
 width = .35
 
 fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, populationFatness, width, label='FatScore')
+rects1 = ax.bar(x - width/2, populationFatness, width, label='ConvexHullFatScore')
 rects2 = ax.bar(x + width/2, ppScores, width, label='PolsbyPopper')
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Scores')
-ax.set_title('Scores by Fatness and PolsbyPopper')
+ax.set_title('States')
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
 ax.legend()

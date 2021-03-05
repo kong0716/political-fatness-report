@@ -27,8 +27,9 @@ for i in range(len(stateDistrictID)):
     x = polsbyPopper[i]
     y = fatness1[i]
     z = fatness2[i]
-    plt.plot(x, z, 'bo')
-    plt.text(x * (1 + 0.007), z * (1 + 0.007) , stateDistrictID[i], fontsize=6)
+    v = fatness3[i]
+    plt.plot(x, w, 'bo')
+    plt.text(x * (1 + 0.007), w * (1 + 0.007) , stateDistrictID[i], fontsize=6)
 
 plt.ylim(ymin=0)
 plt.xlim(0)
