@@ -29,7 +29,7 @@
 	Jeffrey Zhong \\ 112299792
 	\vspace{3ex}
 }
-\date{Feb 24, 2021}
+\date{March 5, 2021}
 
 \begin{document}
 
@@ -42,27 +42,32 @@
 \section{Abstract}
 %TODO%
 %needs to be written (let’s aim for maybe 150 words max? Is that how people do this here?)%
+
 \section{Introduction}
 
 The advent of technology, especially in more recent times, has made every aspect of life “more” something. For instance, we are more connected with the Internet and instant communication across the globe than we were with letters, or printed newspapers. It may seem that this intensification of long-distance communication should make us all closer to one another. Yet, it seems that technology has also made mankind more divided, with the decentralization of news outlets or American politics. With the advent of technology, the decennial process of redistricting states with more than one congressional district has become a partisan affair. Fewer districts are competitive now than even twenty years ago (Cook) such that there is less need to appeal to the other side. Artificial intelligence applied to redistricting has contributed to a polarization of American politics; however, if used with good intentions, it could become the very solution to a problem that it fueled in the first place.
 
 It is easy to call out gerrymandering, yet, at the same time, difficult to give precise measures for it. In Vieth v. Jubelirer, ruled in 2004, the Supreme Court argued that a districting was not gerrymandered for there was no measure to quantify inequality or lack of fairness. As courts – especially the Supreme Court – often rule by precedent, this has been used as an excuse to bring down some cases that made it to the highest court of the land. This has emboldened strategists to make increasingly “unfair” maps. The surge in gerrymandered districting plans is the combination of three factors that all came together at the same time: large political successes for one party, the Republicans, just before drawing districts, the sudden improvement of technology, and the increasing polarization in voting patterns. 
 
-This comes together in what could be considered a paradox: while there are ever more accurate methods to gerrymander at will, there is no mathematical standard accepted by the courts as of today. Furthermore, state constitutions tend to be even further behind, because of the amount of work required to change them. As explained by Levitt, only twenty-three states require their congressional districts to be contiguous. While in practice, this is virtually always the case, it creates more potential for gerrymandering in over half of the states. (Contiguity refers to the fact that any point of the district must be accessible from any other point of the district without leaving it, except for example if part of it is an island and there is a method of transportation such as a bridge or a regular ferry between both sides.) Furthermore, only eighteen states have any mention of compactness for their congressional districts. Within those eighteen states, a minority have more requirements. For instance, Iowa requests that districts not be oddly shaped (the state is almost a rectangle that can be split equally in four rectangles), California asks for districts not to bypass nearby large population areas for more distant populated areas, Arizona requires at least some of the districts to be competitive if feasible, and Rhode Island to represent the state fairly (although it currently has two congressional districts and will most likely lose one after the 2020 Census reapportionment.) Overall, there is a lot of leeway in what can be done by the redistricting committee. 
+%Needs some sources for the claims here%
+
+This comes together in what could be considered a paradox: while there are ever more accurate methods to gerrymander at will, there is no mathematical standard accepted by the courts to identify the practice as of today. Furthermore, state constitutions tend to lag even further behind, because of the amount of the slow legislative process and support required to change them. As explained by Levitt, only twenty-three states require their congressional districts to be contiguous. While in practice, this is virtually always the case, it creates more potential for gerrymandering in over half of the states. (Contiguity refers to the fact that any point of the district must be accessible from any other point of the district without leaving it, except for example if part of it is an island and there is a method of transportation such as a bridge or a regular ferry between both sides.) Furthermore, only eighteen states have any mention of compactness for their congressional districts. Within those eighteen states, a minority have more requirements. For instance, Iowa requests that districts not be oddly shaped (the state is almost a rectangle that can be split equally in four rectangles), California asks for districts not to bypass nearby large population areas for more distant populated areas, Arizona requires at least some of the districts to be competitive if feasible, and Rhode Island to represent the state fairly (although it currently has two congressional districts and will most likely lose one after the 2020 Census reapportionment.) Overall, there is a lot of leeway in what can be done by the redistricting committee. 
 
 
 \section{Methodology}
 To counter this, we suggest setting a standard with a definition of compactness. Compactness is something easily perceivable by humans, yet, there is no measure that satisfies human perception all the time - and we sometimes disagree among ourselves, as shown by Kaufman et al. 
-However, a generally sensible choice is using the Polsby-Popper measure, which is given for an object D by:
+However, a generally sensible choice is using the Polsby-Popper measure, which is given by the formula:
 
 \[
-	4*\pi*A(D) ) / ( P(D)^2
+	PP(D) = \frac{4\pi A(D)}{P(D)^2}
 \]
 
-Where A(D) is the area of the object D and P(D) its perimeter. This gives us a ratio between 0 and 1, and is 0 precisely when the area is 0 - D is a line - and 1 when D is a circle. In particular, this favors round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000. It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness. Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Monorief points out. 
+% Need sources for these claims
+
+Where A(D) is the area of the object D and P(D) its perimeter. This gives us a ratio between 0 and 1. It is 0 precisely when the area is 0 (D is a line or a point) and 1 when D is a circle. In particular, this favors compact round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000. It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness. Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Monorief points out. 
 
 Simultaneously, it became clearer that while a non compact district is almost always subject to gerrymandering, the converse is not always true. One example of this is when districts bypass population centers nearby to instead include populations that are further away. 
-To calculate this measure, we use the following formula:
+To calculate this measure, we used the following formula:
 
 \[
 	\frac{pop(\text{DISTRICT})}{pop(\text{BOUNDING CIRCLE})}
@@ -127,12 +132,6 @@ Specifically for the example of TX-16 which takes advantage of being small and d
 	\includegraphics[width=\linewidth]{./figures/TX-16-SurroundingArea.png}
 	\caption{TX-16 Political Results}
 	\label{fig:tx16political}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/TX-16-BoundingCircle.png}
-	\caption{TX-16 Bounding Circle}
-	\label{fig:tx16boundingCircle}
 \end{figure}
 
 We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby Popper score and yet a relatively high Fatness score.
