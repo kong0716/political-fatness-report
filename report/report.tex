@@ -83,7 +83,7 @@ To calculate this measure, we used the following formula:
 	\frac{POP(\text{D})}{POP(\text{BC(D)})}
 \]
 
-Where D represents the district D, BC(D) is the minimum bounding circle that contains D, and POP(D) is the population in D. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the circle is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the districts. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the bounding circle should not influence the districts. Once again, a perfect score of 1 comes when the district is a perfect circle, and a low score close to 0 comes when the bounding circle encompasses many populous precincts, large areas of land, or a combination of both.
+Where D represents the district D, BC(D) is the minimum bounding circle that contains D, and POP(D) is the population in D. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the circle is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population in the districts. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the bounding circle should not influence the districts. Once again, a perfect score of 1 comes when the district is a perfect circle, and a low score close to 0 comes when the bounding circle encompasses many populous precincts, large areas of land, or a combination of both. For the rest of this report, we will refer to this measure as the Circle Fatness measure.
 
 %[We should probably include the code for the two measures here, if anyone feels like adding it. Actually, maybe after each measure, whatever is better.]%
 
@@ -99,7 +99,7 @@ Since these two measures are different, it is interesting to compare them to see
 
 %We need a better name for this section
 \section{Research}
-From the results, we can see compare each district's Fatness score with its Polsby-Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
+From the results, we can see compare each district's Circle Fatness score with its Polsby-Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
@@ -107,7 +107,7 @@ From the results, we can see compare each district's Fatness score with its Pols
 	\label{fig:datapointsEdited}
 \end{figure}
 
-We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both Fatness and Polsby-Popper are both high for these districts. It is rather easy to tell why.
+We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both Circle Fatness and Polsby-Popper are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/NY-25-BoundingCircle.png}
@@ -127,7 +127,7 @@ We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
-These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby-Popper score and also partially explains the high Fatness score. 
+These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby-Popper score and also partially explains the high Circle Fatness score. 
 
 Specifically for the example of TX-16 which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
 
@@ -143,7 +143,7 @@ Specifically for the example of TX-16 which takes advantage of being small and d
 	\label{fig:tx16political}
 \end{figure}
 
-We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby-Popper score and yet a relatively high Fatness score.
+We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby-Popper score and yet a relatively high Circle Fatness score.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/OH-03-BoundingCircle.png}
@@ -151,7 +151,7 @@ We now move onto the extremeties in the second quadrant. Specifically, many dist
 	\label{fig:oh03boundingCircle}
 \end{figure}
 
-We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby-Popper gives it a low score. Polsby-Popper's low score can be explained by the large perimeter that OH-03 has relative to its area. The fact of the matter is OH-03 is incredibly fractured on the city of Columbus. The fact that OH-03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
+We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Circle Fatness measure seems to fail as it gives a high score to the district while Polsby-Popper gives it a low score. Polsby-Popper's low score can be explained by the large perimeter that OH-03 has relative to its area. The fact of the matter is OH-03 is incredibly fractured on the city of Columbus. The fact that OH-03 is centered around the city of Columbus is also the reason why it scores highly in the Circle Fatness measure.
 %https://www.aclu.org/sites/default/files/field_document/complaint_timestamped.pdf
 
 OH-11, the one with most of Cleveland, is heavily Democratic and connects two urban areas. The surrounding districts are barely Republican, and neighborhoods were carved carefully to ensure that this district would encompass as many Democrats as possible. Since Ohio’s map was drawn by a Republican state legislature, it is quite safe to assume that this is an attempt at gerrymandering. OH-03, in the heart of Columbus, suffers from the same issue: it is surrounded by two moderately Republican districts, OH-12 and OH-15, meaning that there is only one Democratic district in Columbus when there could be two with a different drawing.  While a potential excuse could be that this mostly follows the Columbus metropolitan area, it does not represent the will of the voters in the greater Columbus area quite fairly. 
@@ -185,7 +185,7 @@ We can now skip ahead to the third quadrant. These are the districts often point
 	\label{fig:oh06boundingCircle}
 \end{figure}
 
-OH-06 is a good example of this: it covers all of Southeast Ohio, but is unnecessarily stretched out, with several indents both ways from neighboring districts. For example, Athens or Youngstown, places that lean Democratic, are barely out of the district. Once again in Ohio, OH-04 is also quite serpentine in shape and obviously avoids multiple areas, such as the indent made by OH-05, or the coast that is monopolized by OH-09 (it is worth mentioning that OH-09 is the only Democratic-leaning district of Northwest Ohio). As neighboring districts lean Republican like OH-04, we can see that small portions of urban areas such as Lorain or Strongsville were incorporated, but are not enough to switch the vote. What is currently Rep. Jim Jordan’s district clearly could instead have taken the large swaths of Republican land that create a hole in the middle of the district. It’s too bad this district is not in the other state that begins with an O, as this “duck” district would have been a good explanation for that state’s university’s mascot.
+OH-06 is a good example of this: it covers all of Southeast Ohio, but is unnecessarily stretched out, with several indents both ways from neighboring districts. For example, Athens or Youngstown, places that lean Democratic, are just barely out of the district. Once again in Ohio, OH-04 is also quite serpentine in shape and obviously avoids multiple areas, such as the indent made by OH-05, or the coast that is monopolized by OH-09 (it is worth mentioning that OH-09 is the only Democratic-leaning district of Northwest Ohio). As neighboring districts lean Republican like OH-04, we can see that small portions of urban areas such as Lorain or Strongsville were incorporated, but are not enough to switch the vote. What is currently Rep. Jim Jordan’s district clearly could instead have taken the large swaths of Republican land that create a hole in the middle of the district. It’s too bad this district is not in the other state that begins with an O, as this “duck” district would have been a good explanation for that state’s university’s mascot.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/OH-04.png}
@@ -210,7 +210,7 @@ OH-06 is a good example of this: it covers all of Southeast Ohio, but is unneces
 As an aside: OH-04 has a very large prison and thousands of African American inmates that cannot vote. This also clearly does not respect county lines in the East (but look at OH-11, and Summit County, with four districts and no Congress representative…)
 https://www.wksu.org/government-politics/2019-11-15/how-did-ohios-most-liberal-city-end-up-with-its-most-conservative-congressman
 
-We will finally take a look at the fourth and last quadrant of the plot. It is sparcely populated and represents districts that score high in Polsby-Popper but low in Fatness. We will look at NY-17, NY-18, NY-21, PA-08, and GA-09.
+We will finally take a look at the fourth and last quadrant of the plot. It is sparcely populated and represents districts that score high in Polsby-Popper but low in Circle Fatness. We will look at NY-17, NY-18, NY-21, PA-08, and GA-09.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/NY-18-BoundingCircle.png}
@@ -242,17 +242,67 @@ The same situation can be applied to Georgia's 9th congressional district. The "
 
 Finally, Pennsylvania's 8th congressional district tells us the same story as the past three districts. As one can see, PA-08 sits right outside of Philidelphia, but its bounding circle does not. This again causes the high population of Philidelphia to be just outside of the district's borders but within the bounding circle, thus causing the low fatness score. It is a recurring theme in this quadrant of the graph that these districts seem to be just outside of major population zones and is part of the state's borders.
 
+\section{Improvements}
+At this point it is easy to suggest improvements to our original fatness measure. Instead of calculating population of the minimum bounding circle for the district, one can argue that a more geometric compact measure would calculate the population of the convex hull of the district as the denominator. The changed formula would be the following with $CH(D)$ obviously being the convex hull of a district:
 
+\[
+	\frac{POP(\text{D})}{POP(\text{CH(D)})}
+\]
 
-Before concluding our work on the two measures, we will go to a somewhat miscellaneous example in California. CA-08 scores the worst fatness score across all ten states studied, and the Polsby-Popper score is mediocre as well. It is true that this is perhaps not the best district, however, its score is harmed by what is going on behind the district lines. While it does have a rather jagged western boundary and a rather long rectilinear shape, the fatness score is deserving of the deeper analysis. It is no coincidence that the worst fatness measure is in the most populous state, and specifically, one with both very densely and sparsely populated areas. The diameter of the bounding circle of this large district is almost the northeast border of the district - this means that besides northern California and the Bay Area, virtually all of California is within that bounding circle. The fatness score is close to 0.025, which would indicate that about a fortieth of the bounding circle population is within the district: this means there are about forty districts inside of this circle (note that since we do not consider populations outside of the state, this would be impossible in any other state)! 
+We will refer to this measure as the Convex Hull Fatness. The idea is the Circle Fatness is too susceptible to the shape of the state, most notably the funnel shape discussed with NY-17 and NY-18. Below is our results from that thought.
 
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/convexHullPopulationFatnessVPP.png}
+	\caption{ConvexHull Population Fatness vs PolsbyPopper}
+	\label{fig:cvHullPopVPP}
+\end{figure}
+
+The most notable change is that the Convex Hull Fatness score is much overall higher than the Circle Fatness score. Furthermore, it is to be noted that if you split the plot into four quadrants again, the fourth quadrant is now almost entirely empty. This proves that the Convex Hull Fatness measure is less susceptible to the funnel shape districts that were present in New York. Furthermore, looking at GA-09 geometrically, it is obviously a "compact" corner district that was simply too close to the city of Alanta. 
+
+However, there are many more new additions to the second quadrant. We will focus on OR-02 and OH-10 as these two districts had the highest increase in fatness score.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-10-BoundingCircle.png}
+	\caption{OH-10 Bounding Circle}
+	\label{fig:oh10boundingCircle}
+\end{figure}
+
+For OH-10, the Polsby-Popper measure rated this district rather low due to its long rectangle shape. Obviously, with the convex hull fatness, the score is higher as the only major difference is the removal the staircase shaped northern border of the district. Looking at the district geometrically, by itself, it would be hard to justify malicious intent.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OR-02-BoundingCircle.png}
+	\caption{OR-02 Bounding Circle}
+	\label{fig:or02boundingCircle}
+\end{figure}
+
+A similar case can be made for OR-02. Its Circle Fatness score and Polsby-Popper score were both low, landing it in the third quadrant in the original plot. However, now it is situated comfortable in the second quadrant where the Polsby-Popper score is low and the Convex Hull Fatness score is high. We believe that this is a more accurate measure of the compactness of this district. The minimum bounding circle nearly covers the entire state, including the most populous non coastal sections of the state. There are some theories to explain the low Polsby-Popper score. If one looks closely at the border of the district, specifically the western and northern half, it is made up of jagged edges. The jagged edges constitute the district following a border represented by rivers to the north and northeast. The western portion is simply following the precincts that have the jagged edges. The many jagged edges increase the perimeter portion of the Polsby-Popper measure, therby resulting in a low score for this district. In essence, the convex hull measure smooths out or fills in the jagged edges of a district, thereby resulting in a higher score.
+
+The Convex Hull Fatness is not without its own faults. For example, OH-06 has scored much higher than in the Circle Fatness measure. An explaination of why it was considered a bad district was elaborated on previously. However, due to the new measure of fatness, it follows the same reasoning as OH-10. The difference here is that OH-10 does not seem to avoid any major population centers. However, an arguement can be made that OH-06 avoids the Democratic leaning city of Athens. It is not the most egregious district in terms of compactness but it seems to be elongated with intent. A better example of this comes with TX-15 and TX-34 which both have similar reasonings as OH-06.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-15-BoundingCircle.png}
+	\caption{TX-15 Bounding Circle}
+	\label{fig:tx15boundingCircle}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-34-BoundingCircle.png}
+	\caption{TX-34 Bounding Circle}
+	\label{fig:tx34boundingCircle}
+\end{figure}
+
+A better districting would have been to cornerize at least one of these districts, but it seems that Texas has an over-abundance of these elongated districts. In addition, not only are these districts elongated, they seem to have bottlenecks in them for the sake of lengthening the district. Specifically Precinct 3888 and Preinct 1122 which are both highlighted in the figures. The reasoning behind the lengthening is unknown but it does seem to be done with intent.
 
 \section{Future Considerations}
 With all of these case studies, there are quite a few things we can say about these measures and their strengths and weaknesses compared to human perception - which is supposed to be the ultimate judge.
 
 Polsby-Popper is good at catching districts that have unnecessarily long boundaries by penalizing them. As a result, districts with long straight lines tend to be favored. Something that is both positive and negative is that it does not depend on what is going on outside of the district, which means that we cannot see if population groups are avoided, but on the other hand, districts are not graded based on their size as a dilation of district by any strictly positive constant still yields the same score. However, sometimes, the border looks straight from a distance but is not on closer inspection: this can give unnecessarily low scores, unless the border is smoothened, a less straightforward and undebatable process than it may appear.
 
-The population fatness measure devised, on the other hand, will “punish” long districts, and offers a solution to the issue of Polsby-Popper not taking into account what is happening right outside of the state. However, it has inherent downsides. For instance, as long as a bounding circle is small enough, the score will remain high: that is the case for OH-03 where several areas are removed from the bounding circle deeply down towards the middle, but this has a relatively limited effect on the fatness score. Additionally, this measure tends to favor districts on the edge of the state, since on at least one side, there is no population to consider. As a result, we suggest that there could instead be a computation of the arithmetic or geometric mean of the fatness scores, and that good plans should score above a certain threshold. The arithmetic mean (adding all scores) would favor good outliers in the state, and the geometric mean (multiplying all some) would strongly hinder bad outliers, so both systems have their (different) merits. More importantly, population fatness favors smaller districts, and those surrounding less populated areas. We saw this with examples such as TX-16 (El Paso is in the middle of the desert), OH-03 (with a good proportion of Columbus, with few of the suburbs concerned). However, larger districts tend to have more districts in their bounding circle, which automatically drop the population fatness score. In fact, this might create a political bias, since in general, Democratic congressional districts are more urban and smaller than their Republican counterparts. If we minimize the number of “nonfat” districts, we might crack Republican districts, but if we maximize the number of “fat” districts, we would pack Democrats. There are still many more questions to be answered, but as in other instances, they might show political bias. 
+The Circle Fatness measure devised, on the other hand, will “punish” long districts, and offers a solution to the issue of Polsby-Popper not taking into account what is happening right outside of the district. However, it has inherent downsides. For instance, as long as a bounding circle is small enough, the score will remain high: that is the case for OH-03 where several areas are removed from the bounding circle deeply down towards the middle, but this has a relatively limited effect on the fatness score. The opposite is true as well, the Circle Fatness is too susceptible when the district is elongated in one direction, or just covers a large area due to the population requirements.
+
+The Convex Hull Fatness improves on the Circle Fatness' faults but it leaves things to be desired. It increases the low scores given to the elongated districts like OH-10. But there are reservations on whether this should apply to all elongated districts. Specifically, districts with a single precinct serving to create a bottleneck for the sake of elongating a district. Examples include TX-15 and TX-34.
+
+As a result, we suggest that there could instead be a computation of the arithmetic or geometric mean of the fatness scores, and that good plans should score above a certain threshold. The arithmetic mean (adding all scores) would favor good outliers in the state, and the geometric mean (multiplying all some) would strongly hinder bad outliers, so both systems have their (different) merits. More importantly, population fatness favors smaller districts, and those surrounding less populated areas. We saw this with examples such as TX-16 (El Paso is in the middle of the desert), OH-03 (with a good proportion of Columbus, with few of the suburbs concerned). However, larger districts tend to have more districts in their bounding circle, which automatically drop the population fatness score. In fact, this might create a political bias, since in general, Democratic congressional districts are more urban and smaller than their Republican counterparts. If we minimize the number of “nonfat” districts, we might crack Republican districts, but if we maximize the number of “fat” districts, we would pack Democrats. There are still many more questions to be answered, but as in other instances, they might show political bias. 
 
 
 \printbibliography
