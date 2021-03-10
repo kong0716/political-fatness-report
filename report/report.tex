@@ -71,10 +71,10 @@ Where A(D) is the area of the object D and P(D) its perimeter. This gives us a r
 % Citation needed%
 Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Monorief points out. 
 
-It becomes evidently clear that the Polsby Popper measure only takes into consideration the geometric compactness or fatness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size.
+It becomes evidently clear that the Polsby-Popper measure only takes into consideration the geometric compactness or fatness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size.
 
 Simultaneously, it became clearer that while a non compact district is almost always subject to gerrymandering, the converse is not always true. One example of this is when districts bypass population centers nearby to instead include populations that are further away.
-Here we will propose an alternative to the Polsby Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. 
+Here we will propose an alternative to the Polsby-Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. 
 To calculate this measure, we used the following formula:
 
 \[
@@ -97,7 +97,7 @@ Since these two measures are different, it is interesting to compare them to see
 
 %We need a better name for this section
 \section{Research}
-From the results, we can see compare each district's Fatness score with its Polsby Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
+From the results, we can see compare each district's Fatness score with its Polsby-Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/fatnessPopulationVpolsbyPopperEdited.png}
@@ -105,7 +105,7 @@ From the results, we can see compare each district's Fatness score with its Pols
 	\label{fig:datapointsEdited}
 \end{figure}
 
-We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both Fatness and Polsby Popper are both high for these districts. It is rather easy to tell why.
+We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both Fatness and Polsby-Popper are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/NY-25-BoundingCircle.png}
@@ -125,7 +125,7 @@ We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-
 	\label{fig:tx16boundingCircle}
 \end{figure}
 
-These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby Popper score and also partially explains the high Fatness score. 
+These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby-Popper score and also partially explains the high Fatness score. 
 
 Specifically for the example of TX-16 which takes advantage of being small and densely populated with sparsely populated districts and state/country borders around, along with straight, perpendicular borders for most of its contour. It is a very Democratic area surrounded by moderately Republican areas, but it forms a coherent district encompassing one city and its direct surroundings, and contains all but the southernmost part of El Paso County, making it a very reasonable district. It is a similar story for the other districts.
 
@@ -141,7 +141,7 @@ Specifically for the example of TX-16 which takes advantage of being small and d
 	\label{fig:tx16political}
 \end{figure}
 
-We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby Popper score and yet a relatively high Fatness score.
+We now move onto the extremeties in the second quadrant. Specifically, many districts in Ohio form a cluster with low a Polsby-Popper score and yet a relatively high Fatness score.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/OH-03-BoundingCircle.png}
@@ -149,7 +149,7 @@ We now move onto the extremeties in the second quadrant. Specifically, many dist
 	\label{fig:oh03boundingCircle}
 \end{figure}
 
-We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby Popper gives it a low score. Polsby Popper's low score can be explained by the large perimeter that OH-03 has relative to its area. The fact of the matter is OH-03 is incredibly fractured on the city of Columbus. The fact that OH-03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
+We will focus on Ohio's 3rd congressional district. It was named in a lawsuit specifically for gerrymandering. This is where our Fatness measure seems to fail as it gives a high score to the district while Polsby-Popper gives it a low score. Polsby-Popper's low score can be explained by the large perimeter that OH-03 has relative to its area. The fact of the matter is OH-03 is incredibly fractured on the city of Columbus. The fact that OH-03 is centered around the city of Columbus is also the reason why it scores highly in the Fatness measure.
 %https://www.aclu.org/sites/default/files/field_document/complaint_timestamped.pdf
 
 OH-11, the one with most of Cleveland, is heavily Democratic and connects two urban areas. The surrounding districts are barely Republican, and neighborhoods were carved carefully to ensure that this district would encompass as many Democrats as possible. Since Ohio’s map was drawn by a Republican state legislature, it is quite safe to assume that this is an attempt at gerrymandering. OH-03, in the heart of Columbus, suffers from the same issue: it is surrounded by two moderately Republican districts, OH-12 and OH-15, meaning that there is only one Democratic district in Columbus when there could be two with a different drawing.  While a potential excuse could be that this mostly follows the Columbus metropolitan area, it does not represent the will of the voters in the greater Columbus area quite fairly. 
@@ -208,7 +208,7 @@ OH-06 is a good example of this: it covers all of Southeast Ohio, but is unneces
 As an aside: OH-04 has a very large prison and thousands of African American inmates that cannot vote. This also clearly does not respect county lines in the East (but look at OH-11, and Summit County, with four districts and no Congress representative…)
 https://www.wksu.org/government-politics/2019-11-15/how-did-ohios-most-liberal-city-end-up-with-its-most-conservative-congressman
 
-We will finally take a look at the fourth and last quadrant of the plot. It is sparcely populated and represents districts that score high in Polsby Popper but low in Fatness. We will look at NY-17, NY-18, NY-21, PA-08, and GA-09.
+We will finally take a look at the fourth and last quadrant of the plot. It is sparcely populated and represents districts that score high in Polsby-Popper but low in Fatness. We will look at NY-17, NY-18, NY-21, PA-08, and GA-09.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/NY-18-BoundingCircle.png}
@@ -222,7 +222,7 @@ We will finally take a look at the fourth and last quadrant of the plot. It is s
 	\label{fig:ny17boundingCircle}
 \end{figure}
 
-These two districts from New York have low fatness scores yet high Polsby Popper scores due to the unique shape of the state. These two districts are "funnel" shaped towards one of the most populous city in the entire country. Therefore, parts of the bounding circle enroach upon the city and its outer suburbs. This causes the fatness score to be low since it "misses" the more populous precincts of the state.
+These two districts from New York have low fatness scores yet high Polsby-Popper scores due to the unique shape of the state. These two districts are "funnel" shaped towards one of the most populous city in the entire country. Therefore, parts of the bounding circle enroach upon the city and its outer suburbs. This causes the fatness score to be low since it "misses" the more populous precincts of the state.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/GA-09-BoundingCircle.png}
@@ -230,7 +230,7 @@ These two districts from New York have low fatness scores yet high Polsby Popper
 	\label{fig:ga09boundingCircle}
 \end{figure}
 
-The same situation can be applied to Georgia's 9th congressional district. The "long" shape of GA-09 going from northwest to southeast causes its bounding circle to contain the city of Alanta. It is again a major population source. One thing to not is that although Alanta predominately leans towards the Democratic Party, GA-09 consistently leans Republican. It is one of the most pro-republican districts in the state of Georgia.
+The same situation can be applied to Georgia's 9th congressional district. The "long" shape of GA-09 going from northwest to southeast causes its bounding circle to contain the city of Atlanta. It is again a major population source. One thing to not is that although Atlanta predominately leans towards the Democratic Party, GA-09 consistently leans Republican. It is one of the most pro-republican districts in the state of Georgia.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{./figures/PA-08-BoundingCircle.png}
