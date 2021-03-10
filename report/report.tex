@@ -163,8 +163,6 @@ OH-11, the one with most of Cleveland, is heavily Democratic and connects two ur
 \end{figure}
 
 
-%Need to explain why Ohio 16 is average in the Fatness score
-
 We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness.
 
 \begin{figure}[H]
@@ -300,10 +298,10 @@ Polsby-Popper is good at catching districts that have unnecessarily long boundar
 
 The Circle Fatness measure devised, on the other hand, will “punish” long districts, and offers a solution to the issue of Polsby-Popper not taking into account what is happening right outside of the district. However, it has inherent downsides. For instance, as long as a bounding circle is small enough, the score will remain high: that is the case for OH-03 where several areas are removed from the bounding circle deeply down towards the middle, but this has a relatively limited effect on the fatness score. The opposite is true as well, the Circle Fatness is too susceptible when the district is elongated in one direction, or just covers a large area due to the population requirements.
 
-The Convex Hull Fatness improves on the Circle Fatness' faults but it leaves things to be desired. It increases the low scores given to the elongated districts like OH-10. But there are reservations on whether this should apply to all elongated districts. Specifically, districts with a single precinct serving to create a bottleneck for the sake of elongating a district. Examples include TX-15 and TX-34.
+The Convex Hull Fatness improves on the Circle Fatness' faults but it leaves things to be desired. It increases the low scores given to the elongated districts like OH-10. But there are reservations on whether this should apply to all elongated districts. Specifically, districts with a single precinct serving to create a bottleneck for the sake of elongating a district. Prominent examples discussed are TX-15 and TX-34.
 
-As a result, we suggest that there could instead be a computation of the arithmetic or geometric mean of the fatness scores, and that good plans should score above a certain threshold. The arithmetic mean (adding all scores) would favor good outliers in the state, and the geometric mean (multiplying all some) would strongly hinder bad outliers, so both systems have their (different) merits. More importantly, population fatness favors smaller districts, and those surrounding less populated areas. We saw this with examples such as TX-16 (El Paso is in the middle of the desert), OH-03 (with a good proportion of Columbus, with few of the suburbs concerned). However, larger districts tend to have more districts in their bounding circle, which automatically drop the population fatness score. In fact, this might create a political bias, since in general, Democratic congressional districts are more urban and smaller than their Republican counterparts. If we minimize the number of “nonfat” districts, we might crack Republican districts, but if we maximize the number of “fat” districts, we would pack Democrats. There are still many more questions to be answered, but as in other instances, they might show political bias. 
-
+% Conclusion needs to be fixed
+The inherent difference between both Fatness measures and Polsby-Popper is the fact that Polsby-Popper considers only the geometric portion of fatness. Both our Circle and Convex Hull Fatness improve on this by including the population requirement that all districts in a state must be of equal population. Though these Fatness measures undoubtly fix some of Polsby-Popper's scores for some districts, it introduces questionable scores to others. Furthermore, it is to be noted that our data set was run on only nine of the fifty total states.
 
 \printbibliography
 
