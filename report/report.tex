@@ -73,14 +73,14 @@ Where A(D) is the area of the object D and P(D) its perimeter. This gives us a r
 % Citation needed%
 Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Moncrief points out. 
 
-It becomes evidently clear that the Polsby-Popper measure only takes into consideration the geometric compactness or fatness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size.
+It becomes evidently clear that the Polsby-Popper measure only takes into consideration the geometric compactness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size.%Insert SC ruling for equal populations 
 
+However, there are legal precedents, \cite{sandiego}, that say a district cannot be oddly shaped for the purpose of equal populations if the odd shape bypasses a populaton center to reach other distant population centers. 
 Simultaneously, it became clearer that while a non compact district is almost always subject to gerrymandering, the converse is not always true. One example of this is when districts bypass population centers nearby to instead include populations that are further away.
-Here we will propose an alternative to the Polsby-Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. 
-To calculate this measure, we used the following formula:
+Here we will propose an alternative to the Polsby-Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. To calculate this measure, we used the following formula:
 
 \[
-	\frac{POP(\text{D})}{POP(\text{BC(D)})}
+	\frac{POP(\text{D})}{POP(\text{CH(D)})}
 \]
 
 Where D represents the district D, CH(D) is the convex hull that contains D, and POP(D) is the population in D. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the convexhull is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population inside the district borders. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the convex hull should not influence the districts. Once again, a perfect score of 1 comes when the district geometry itself is a convex hull, and a low score close to 0 comes when the convex hull encompasses many populous precincts, large areas of land, or a combination of both outside of the district's borders.
@@ -92,20 +92,15 @@ Since these two measures are different, it is interesting to compare them to see
 \section{Results}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/convexHullPopulationFatnessVPP.png}
+	\includegraphics[width=\linewidth]{./figures/convexHullPopulationFatnessVPP2Edited.png}
 	\caption{Plot of Population Fatness v. PolsbyPopper}
 	\label{fig:datapoints}
 \end{figure}
 
 %We need a better name for this section
 \section{Research}
-From the results, we can see compare each district's Fatness score with its Polsby-Popper score. To help easily identify specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/convexHullPopulationFatnessVPPQuadrants.png}
-	\caption{Plot of Population Fatness v. PolsbyPopper Edited}
-	\label{fig:datapointsEdited}
-\end{figure}
+From the results, we can see compare each district's Fatness score with its Polsby-Popper score. There is a slight positive correlation between the Fatness and PolsbyPopper scores.
+To help easily identify the location of specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
 
 \subsection{Low Fatness and High Polsby Popper}
 We will make a quick remark on the fourth quadrant. This is the quadrant where we would have a low Fatness score and a high Polsby Popper score. The point of this quadrant is to find the districts which Polsby Popper identifies as a good district but Fatness identifies as a bad district. In essence, if we use Polsby Popper to categorize good and bad districts, this quadrant would represent the False Positive. It is mostly empty except for the inclusion of North Carolina's 6th congressional district.
@@ -178,7 +173,7 @@ For OH-10, the Polsby-Popper measure rated this district rather low due to its l
 
 A similar case can be made for OR-02. Its Polsby-Popper score was low, landing it in the left half the plot. However, it is also situated comfortable in the second quadrant where the Fatness score is high. We believe that this is a more accurate measure of the compactness of this district. There are some theories to explain the low Polsby-Popper score. If one looks closely at the border of the district, specifically the western and northern half, it is made up of jagged edges. The jagged edges constitute the district following a border represented by rivers to the north and northeast. The western portion is simply following the precincts that have the jagged edges. The many jagged edges increase the perimeter portion of the Polsby-Popper measure, therby resulting in a low score for this district. The convex hull measure is not effected as much by the jagged edges as it would change little in terms of the population that is included. Furthermore, the jagged edges are borders to the Willamette National Forest which would obviously be have a low population density even if it is included.
 
-Similar reasonings can be made for OR-04 and OR-01. Even though OR-01 seems to have a "Pac-Man" shape, the convex hull simply adds the Tillamook State Forest.
+Again, similar reasonings can be made for OR-04, OR-01, UT-3, and TX-01. Even though OR-01 seems to have a "Pac-Man" shape, the convex hull simply adds the Tillamook State Forest. For the case of UT-03, it comes from the simple fact that the majority of Utah's geography is composed of deserts. Therefore, the population of the convex hull of a district would not be a major increase compared to the population of the district itself.
 %\begin{figure}[H]
 %	\includegraphics[width=\linewidth]{./figures/OR-04.png}
 %	\caption{Oregon District 06}
@@ -191,30 +186,12 @@ Similar reasonings can be made for OR-04 and OR-01. Even though OR-01 seems to h
 %	\label{fig:or04border}
 %\end{figure}
 
-The Convex Hull Fatness is not without its own faults. For example, OH-06 has scored much higher than in the Circle Fatness measure. An explaination of why it was considered a bad district was elaborated on previously. However, due to the new measure of fatness, it follows the same reasoning as OH-10. The difference here is that OH-10 does not seem to avoid any major population centers. However, an arguement can be made that OH-06 avoids the Democratic leaning city of Athens. It is not the most egregious district in terms of compactness but it seems to be elongated with intent. A better example of this comes with TX-15 and TX-34 which both have similar reasonings as OH-06.
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/TX-15-BoundingCircle.png}
-	\caption{TX-15 Bounding Circle}
-	\label{fig:tx15boundingCircle}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/TX-34-BoundingCircle.png}
-	\caption{TX-34 Bounding Circle}
-	\label{fig:tx34boundingCircle}
-\end{figure}
-
-A better districting would have been to cornerize at least one of these districts, but it seems that Texas has an over-abundance of these elongated districts. In addition, not only are these districts elongated, they seem to have bottlenecks in them for the sake of lengthening the district. Specifically Precinct 3888 and Preinct 1122 which are both highlighted in the figures. The reasoning behind the lengthening is unknown but it does seem to be done with intent.
-
 \section{Future Considerations}
 With all of these case studies, there are quite a few things we can say about these measures and their strengths and weaknesses compared to human perception - which is supposed to be the ultimate judge.
 
-Polsby-Popper is good at catching districts that have unnecessarily long boundaries by penalizing them. As a result, districts with long straight lines tend to be favored. Something that is both positive and negative is that it does not depend on what is going on outside of the district, which means that we cannot see if population groups are avoided, but on the other hand, districts are not graded based on their size as a dilation of district by any strictly positive constant still yields the same score. However, sometimes, the border looks straight from a distance but is not on closer inspection: this can give unnecessarily low scores, unless the border is smoothened, a less straightforward and undebatable process than it may appear.
+Polsby-Popper is good at catching districts that have unnecessarily long boundaries by penalizing them. As a result, districts with long straight lines tend to be favored. Something that is both positive and negative is that it does not depend on what is going on outside of the district, which means that we cannot see if population groups are avoided, but on the other hand, districts are not graded based on their size as a dilation of district by any strictly positive constant still yields the same score. However, sometimes, the border looks straight from a distance but is not on closer inspection: this can give unnecessarily low scores, unless the border is smoothened, a less straightforward and undebatable process than it may appear. It can be stated that the main pitfall of PolsbyPopper comes from its perimeter portion of the formula. It did not take into consideration the fact that many of the districts borders follow the geography of the land or rivers. That is where the majority of the "jagged" borders of these districts come from, which in turn increases the overall perimeter of the district.
 
-The Circle Fatness measure devised, on the other hand, will “punish” long districts, and offers a solution to the issue of Polsby-Popper not taking into account what is happening right outside of the district. However, it has inherent downsides. For instance, as long as a bounding circle is small enough, the score will remain high: that is the case for OH-03 where several areas are removed from the bounding circle deeply down towards the middle, but this has a relatively limited effect on the fatness score. The opposite is true as well, the Circle Fatness is too susceptible when the district is elongated in one direction, or just covers a large area due to the population requirements.
-
-The Convex Hull Fatness improves on the Circle Fatness' faults but it leaves things to be desired. It increases the low scores given to the elongated districts like OH-10. But there are reservations on whether this should apply to all elongated districts. Specifically, districts with a single precinct serving to create a bottleneck for the sake of elongating a district. Prominent examples discussed are TX-15 and TX-34.
+The Convex Hull Fatness improves on PolsbyPopper's faults but it leaves things to be desired. It increases the low scores given to the elongated districts like OH-10 or districts with jagged edges such as OR-01 and OR-02. However, it gives average to above average scores to many of Ohio's districtings. Specifically OH-03 and OH-06.
 
 % Conclusion needs to be fixed
 The inherent difference between both Fatness measures and Polsby-Popper is the fact that Polsby-Popper considers only the geometric portion of fatness. Both our Circle and Convex Hull Fatness improve on this by including the population requirement that all districts in a state must be of equal population. Though these Fatness measures undoubtly fix some of Polsby-Popper's scores for some districts, it introduces questionable scores to others. Furthermore, it is to be noted that our data set was run on only nine of the fifty total states.
