@@ -28,11 +28,11 @@ for i in range(len(stateDistrictID)):
     y = fatness1[i]
     z = fatness2[i]
     v = fatness3[i]
-    plt.plot(x, z, 'bo')
-    plt.text(x * (1 + 0.007), z * (1 + 0.007) , stateDistrictID[i], fontsize=6)
+    plt.plot(x, v, 'bo')
+    plt.text(x * (1 + 0.007), v * (1 + 0.007) , stateDistrictID[i], fontsize=6)
 print(numpy.corrcoef(polsbyPopper,fatness2))
-plt.ylim(ymin=0)
+#plt.ylim(ymin=0)
 plt.xlim(0)
 plt.xlabel('PolsbyPopper', fontsize=12)
-plt.ylabel('Weighted Fatness (Population)', fontsize=12)
+plt.ylabel('Convex Hull Fatness (Population)', fontsize=12)
 plt.show()
