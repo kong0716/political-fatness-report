@@ -44,8 +44,8 @@
 
 \section{Abstract}
 %TODO%
-%needs to be written (let’s aim for maybe 150 words max? Is that how people do this here?)%
-The issue of gerrymandering has long been an issue in the United States, as many criteria are considered in the process of creating fair districting plans, and these criteria differ from state to state. Some cases in the past have used the Polsby-Popper test as one way to calculate compactness as a measure of gerrymandering, and the test generally favors geometrically compact shapes. However, Polsby-Popper does not account for the distribution of the population within the shape, and as such, may unnecessarily punish non-compact districtings. The paper therefore investigates an alternate compactness measure that factors in the distribution of the population alongside the geometry of a districting: Population atness. Using the ARS, we calculated the population fatness alongside the Polsby-Popper score for the districts of several U.S. states. Graphing the results, we examined the extrema in each quadrant to determine the attributes that most affect each measure. It may be of interest to weigh the Polsby-Popper test score and the population fatness score together for a better measure of compactness. 
+% still a little rough %
+The issue of gerrymandering has long been an issue in the United States, as many criteria are considered in the process of creating fair districting plans, and these criteria differ from state to state. Some cases in the past have used the Polsby-Popper test as one way to calculate compactness as a measure of gerrymandering, and the test generally favors geometrically compact shapes. However, Polsby-Popper does not account for the distribution of the population within the shape, and as such, may unnecessarily punish non-compact districtings. The paper therefore investigates an alternate compactness measure that factors in the distribution of the population alongside the geometry of a districting: Population Fatness. Using the ARS, we calculated the population fatness alongside the Polsby-Popper score for the districts of several U.S. states. Graphing the results, we examined the extrema in each quadrant to determine the attributes that most affect each measure. It may be of interest to weigh the Polsby-Popper test score and the population fatness score together for a better measure of compactness. 
 
 
 \section{Introduction}
@@ -69,7 +69,7 @@ However, a generally sensible choice is using the Polsby-Popper measure, which i
 
 % Need sources for these claims
 
-Where A(D) is the area of the object D and P(D) its perimeter. This gives us a ratio between 0 and 1. It is 0 precisely when the area is 0 (D is a line or a point) and 1 when D is a circle. In particular, this favors compact round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000. (\cite{moncrief})It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness.
+Where $A(D)$ is the area of the object $D$ and $P(D)$ its perimeter. This gives us a ratio between 0 and 1. It is 0 precisely when the area is 0 ($D$ is a line or a point) and 1 when $D$ is a circle. In particular, this favors compact round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000. (\cite{moncrief})It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness.
 % Citation needed%
 Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Moncrief points out. 
 
@@ -80,10 +80,10 @@ Simultaneously, it became clearer that while a non compact district is almost al
 Here we will propose an alternative to the Polsby-Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. To calculate this measure, we used the following formula:
 
 \[
-	\frac{POP(\text{D})}{POP(\text{CH(D)})}
+	\frac{POP(D)}{POP(CH(D))}
 \]
 
-Where D represents the district D, CH(D) is the convex hull that contains D, and POP(D) is the population in D. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the convexhull is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population inside the district borders. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the convex hull should not influence the districts. Once again, a perfect score of 1 comes when the district geometry itself is a convex hull, and a low score close to 0 comes when the convex hull encompasses many populous precincts, large areas of land, or a combination of both outside of the district's borders.
+Where $D$ represents the district $D$, $CH(D)$ is the convex hull that contains $D$, and $POP(D)$ is the population in $D$. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the ratio of the area of the precinct in the convexhull is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population inside the district borders. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the convex hull should not influence the districts. Once again, a perfect score of 1 comes when the district geometry itself is a convex hull, and a low score close to 0 comes when the convex hull encompasses many populous precincts, large areas of land, or a combination of both outside of the district's borders.
 
 %[We should probably include the code for the two measures here, if anyone feels like adding it. Actually, maybe after each measure, whatever is better.]%
 
@@ -111,21 +111,21 @@ This district is actually near average on the Fatness score and PolsbyPopper sco
 We will now turn our attention onto the districts in the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both the Fatness and Polsby-Popper measures are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/NY-25-BoundingCircle.png}
-	\caption{NY-25 Bounding Circle}
-	\label{fig:ny25boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/NY-25-ConvexHull.png}
+	\caption{NY-25 Convex Hull}
+	\label{fig:ny25convexHull}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/NY-15-BoundingCircle.png}
-	\caption{NY-15 Bounding Circle}
-	\label{fig:ny15boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/NY-15-ConvexHull.png}
+	\caption{NY-15 Convex Hull}
+	\label{fig:ny15convexHull}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/TX-16-BoundingCircle.png}
-	\caption{TX-16 Bounding Circle}
-	\label{fig:tx16boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/TX-16-ConvexHull.png}
+	\caption{TX-16 Convex Hull}
+	\label{fig:tx16convexHull}
 \end{figure}
 
 These districts are all centered around a major population hub. NY-25 is centered on Rochester, NY-15 is centered on the Bronx, and TX-16 is centered on El Paso. These districts geometrically all look compact and we believe that no one would considered them abnormal in any sense. This explains the high Polsby-Popper score and also partially explains the high Fatness score. 
@@ -158,17 +158,17 @@ Another district to focus on is Texas' 25th congressional district. Here we see 
 We now move onto the extremeties in the second quadrant. The focus will be on OR-02 and OH-10 as these two districts had the highest fatness score.
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/OH-10-BoundingCircle.png}
-	\caption{OH-10 Bounding Circle}
-	\label{fig:oh10boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/OH-10-ConvexHull.png}
+	\caption{OH-10 Convex Hull}
+	\label{fig:oh10convexHull}
 \end{figure}
 
 For OH-10, the Polsby-Popper measure rated this district rather low due to its long rectangle shape. Obviously, with the convex hull fatness, the score is higher as the only major difference is the removal the staircase shaped northern border of the district. Looking at the district geometrically, by itself, it would be hard to justify malicious intent.
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/OR-02-BoundingCircle.png}
-	\caption{OR-02 Bounding Circle}
-	\label{fig:or02boundingCircle}
+	\includegraphics[width=\linewidth]{./figures/OR-02-ConvexHull.png}
+	\caption{OR-02 Convex Hull}
+	\label{fig:or02convexHull}
 \end{figure}
 
 A similar case can be made for OR-02. Its Polsby-Popper score was low, landing it in the left half the plot. However, it is also situated comfortable in the second quadrant where the Fatness score is high. We believe that this is a more accurate measure of the compactness of this district. There are some theories to explain the low Polsby-Popper score. If one looks closely at the border of the district, specifically the western and northern half, it is made up of jagged edges. The jagged edges constitute the district following a border represented by rivers to the north and northeast. The western portion is simply following the precincts that have the jagged edges. The many jagged edges increase the perimeter portion of the Polsby-Popper measure, therby resulting in a low score for this district. The convex hull measure is not effected as much by the jagged edges as it would change little in terms of the population that is included. Furthermore, the jagged edges are borders to the Willamette National Forest which would obviously be have a low population density even if it is included.
