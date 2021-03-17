@@ -107,6 +107,12 @@ From the results, we can see compare each district's Fatness score with its Pols
 	\label{fig:datapointsEdited}
 \end{figure}
 
+\subsection{Low Fatness and High Polsby Popper}
+We will make a quick remark on the fourth quadrant. This is the quadrant where we would have a low Fatness score and a high Polsby Popper score. The point of this quadrant is to find the districts which Polsby Popper identifies as a good district but Fatness identifies as a bad district. In essence, if we use Polsby Popper to categorize good and bad districts, this quadrant would represent the False Positive. It is mostly empty except for the inclusion of North Carolina's 6th congressional district.
+%Insert NC-06
+This district is actually near average on the Fatness score and PolsbyPopper score. It does seem to be an average district since it leaves the square shape near Greensboro to include the city of Winston Salem. The extrusion into Winston Salem seems to be jarring due to the initial square shape.
+
+\subsection{High Fatness and High Polsby Popper}
 We will begin our look on the first quadrant, specifically NY-25, NY-15, and TX-16. The district scores for both the Fatness and Polsby-Popper measures are both high for these districts. It is rather easy to tell why.
 
 \begin{figure}[H]
@@ -143,6 +149,11 @@ Specifically for the example of TX-16 which takes advantage of being small and d
 	\label{fig:tx16political}
 \end{figure}
 
+\subsection{Low Fatness and Low Polsby Popper}
+We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness.
+
+
+\subsection{High Fatness and Low Polsby Popper}
 We now move onto the extremeties in the second quadrant. The focus will be on OR-02 and OH-10 as these two districts had the highest fatness score.
 
 \begin{figure}[H]
@@ -173,28 +184,6 @@ Similar reasonings can be made for OR-04 and OR-01. Even though OR-01 seems to h
 %	\caption{Oregon District 01}
 %	\label{fig:or04border}
 %\end{figure}
-
-We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness.
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/OH-06.png}
-	\caption{Ohio District 06}
-	\label{fig:oh06border}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/OH-06-SurroundingArea.png}
-	\caption{OH-06 Political Results}
-	\label{fig:oh06political}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{./figures/OH-06-BoundingCircle.png}
-	\caption{OH-06 Bounding Circle}
-	\label{fig:oh06boundingCircle}
-\end{figure}
-
-OH-06 is a good example of this: it covers all of Southeast Ohio, but is unnecessarily stretched out, with several indents both ways from neighboring districts. For example, Athens or Youngstown, places that lean Democratic, are just barely out of the district. Once again in Ohio, OH-04 is also quite serpentine in shape and obviously avoids multiple areas, such as the indent made by OH-05, or the coast that is monopolized by OH-09 (it is worth mentioning that OH-09 is the only Democratic-leaning district of Northwest Ohio). As neighboring districts lean Republican like OH-04, we can see that small portions of urban areas such as Lorain or Strongsville were incorporated, but are not enough to switch the vote. What is currently Rep. Jim Jordan’s district clearly could instead have taken the large swaths of Republican land that create a hole in the middle of the district. It’s too bad this district is not in the other state that begins with an O, as this “duck” district would have been a good explanation for that state’s university’s mascot.
 
 The Convex Hull Fatness is not without its own faults. For example, OH-06 has scored much higher than in the Circle Fatness measure. An explaination of why it was considered a bad district was elaborated on previously. However, due to the new measure of fatness, it follows the same reasoning as OH-10. The difference here is that OH-10 does not seem to avoid any major population centers. However, an arguement can be made that OH-06 avoids the Democratic leaning city of Athens. It is not the most egregious district in terms of compactness but it seems to be elongated with intent. A better example of this comes with TX-15 and TX-34 which both have similar reasonings as OH-06.
 
