@@ -32,7 +32,7 @@
 	Jeffrey Zhong \\ 112299792
 	\vspace{3ex}
 }
-\date{March 8, 2021}
+\date{March 18, 2021}
 
 \begin{document}
 
@@ -50,17 +50,17 @@ The issue of gerrymandering has long been an issue in the United States, as many
 
 \section{Introduction}
 
-The advent of technology, especially in more recent times, has made every aspect of life “more” something. For instance, we are more connected with the Internet and instant communication across the globe than we were with letters, or printed newspapers. It may seem that this intensification of long-distance communication should make us all closer to one another. Yet, it seems that technology has also made mankind more divided, with the decentralization of news outlets or American politics. With the advent of technology, the decennial process of redistricting states with more than one congressional district has become a partisan affair. Fewer districts are competitive now than even twenty years ago such that there is less need to appeal to the other side (\cite{cook}). Artificial intelligence applied to redistricting has contributed to a polarization of American politics; however, if used with good intentions, it could become the very solution to a problem that it fueled in the first place.
+The advent of technology, especially in more recent times, has made every aspect of life “more” something. For instance, we are more connected with the Internet and instant communication across the globe than we were with letters, or printed newspapers. It may seem that this intensification of long-distance communication should make us all closer to one another. Yet, it seems that technology has also made mankind more divided, with the decentralization of news outlets or American politics. With the advent of technology, the decennial process of redistricting states with more than one congressional district has become a partisan affair. Fewer districts are competitive now than even twenty years ago such that there is less need to appeal to the other side (\cite{cook}). This has lead to the increase polarization of the political forum.
 
 It is easy to call out gerrymandering, yet, at the same time, difficult to give precise measures for it. In Vieth v. Jubelirer, ruled in 2004, the Supreme Court argued that a districting was not gerrymandered for there was no measure to quantify inequality or lack of fairness. (\cite{vieth}) As courts – especially the Supreme Court – often rule by precedent, this has been used as an excuse to bring down some cases that made it to the highest court of the land. This has emboldened strategists to make increasingly “unfair” maps. The surge in gerrymandered districting plans is the combination of three factors that all came together at the same time: large political successes for one party, the Republicans, just before drawing districts, the sudden improvement of technology, and the increasing polarization in voting patterns.
 
 %Needs some sources for the claims here%
 
-This comes together in what could be considered a paradox: while there are ever more accurate methods to gerrymander at will, there is no mathematical standard accepted by the courts to identify the practice as of today. Furthermore, state constitutions tend to lag even further behind, because of the amount of the slow legislative process and support required to change them. Only twenty-three states require their congressional districts to be contiguous. (\cite{contiguity}) While in practice, this is virtually always the case, it creates more potential for gerrymandering in over half of the states. (Contiguity refers to the fact that any point of the district must be accessible from any other point of the district without leaving it, except for example if part of it is an island and there is a method of transportation such as a bridge or a regular ferry between both sides.) Furthermore, only eighteen states have any mention of compactness for their congressional districts. Within those eighteen states, a minority have more requirements. For instance, Iowa requests that districts not be oddly shaped (the state is almost a rectangle that can be split equally in four rectangles), California asks for districts not to bypass nearby large population areas for more distant populated areas, Arizona requires at least some of the districts to be competitive if feasible, and Rhode Island to represent the state fairly. (\cite{contiguity}) Overall, there is a lot of leeway in what can be done by the redistricting committee. 
+This comes together in what could be considered a paradox: while there are ever more accurate methods to gerrymander at will, there is no mathematical standard accepted by the courts to identify the practice as of today. Furthermore, state constitutions tend to lag even further behind, because of the amount of the slow legislative process and support required to change them. Only twenty-three states require their congressional districts to be contiguous (\cite{contiguity}). While in practice, this is virtually always the case, it leaves the potential for gerrymandering in over half of the states. (Contiguity refers to the fact that any point of the district must be accessible from any other point of the district without leaving it, except for example if part of it is an island and there is a method of transportation such as a bridge or a regular ferry between both sides.) Furthermore, only eighteen states have any mention of compactness for their congressional districts. Within those eighteen states, a minority have more legal requirements. For instance, Iowa requests that districts not be oddly shaped (the state is almost a rectangle that can be split equally in four rectangles), California asks for districts not to bypass nearby large population areas for more distant populated areas, Arizona requires at least some of the districts to be competitive if feasible, and Rhode Island to represent the state fairly (\cite{contiguity}). Overall, there is a lot of leeway in what can be done by the redistricting committee. 
 
 
 \section{Methodology}
-To counter this, we suggest setting a standard with a definition of compactness. Compactness is something easily perceivable by humans, yet, there is no measure that satisfies human perception all the time - and we sometimes disagree among ourselves, as shown by Kaufman et al. (\cite{king})
+To counter this, we suggest setting a standard with a definition of compactness. Compactness is something easily perceivable by humans, yet, there is no measure that satisfies human perception all the time - and we sometimes disagree among ourselves, as shown by Kaufman et al (\cite{king}).
 However, a generally sensible choice is using the Polsby-Popper measure (\cite{polsbypopper}), which is given by the formula:
 
 \[
@@ -69,11 +69,11 @@ However, a generally sensible choice is using the Polsby-Popper measure (\cite{p
 
 % Need sources for these claims
 
-Where $A(D)$ is the area of the object $D$ and $P(D)$ its perimeter. This gives us a ratio between 0 and 1. It is 0 precisely when the area is 0 ($D$ is a line or a point) and 1 when $D$ is a circle. In particular, this favors compact round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000. (\cite{moncrief})It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness.
-% Citation needed%
+Where $A(D)$ is the area of the object $D$ and $P(D)$ its perimeter. This gives us a ratio between 0 and 1. It is 0 precisely when the area is 0 ($D$ is a line or a point) and 1 when $D$ is a circle. In particular, this favors compact round objects, and defavors those with longer or jagged perimeters. Both of these are important, and the measure has been used in real life, for instance with Arizona’s redistricting in 2000 (\cite{moncrief}). It is noteworthy that several states use different measures, particularly in the West, where more attention is paid to fairness.
+
 Other measures are used in different states: for instance, in Colorado, the districts should minimize the total perimeter. States like California and Michigan instead focus on dispersion rather than contorted boundaries, as Moncrief points out. 
 
-It becomes evidently clear that the Polsby-Popper measure only takes into consideration the geometric compactness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size (\cite{westberryVsanders}). However, there are legal precedents, \cite{sandiego}, that say a district cannot be oddly shaped for the purpose of equal populations if the odd shape bypasses a nearby populaton center to reach population centers further away. That is one of the features that may indicate gerrymandering.
+It becomes evidently clear that the Polsby-Popper measure only takes into consideration the geometric compactness of the redistricting shape. A more suitable measure for compactness would also take into consideration the population requirement of the districtings. All congressional districtings have to be equal in population at the time of the redistricting. For example, a congressional district may seem to be shaped oddly but that is only due to the legal requirement for equal population size (\cite{westberryVsanders}). However, there are legal precedents, (\cite{sandiego}) and (\cite{california}), that say a district cannot be oddly shaped for the purpose of equal populations if the odd shape bypasses a nearby populaton center to reach population centers further away. That is one of the features that may indicate gerrymandering.
 
 Here we will propose an alternative to the Polsby-Popper that will be referred to as the Population Fatness measure, or Fatness for brevity. To calculate this measure, we used the following formula:
 
@@ -146,11 +146,34 @@ Specifically for the example of TX-16 which takes advantage of being small and d
 We can now skip ahead to the third quadrant. These are the districts often pointed out by opponents of gerrymandering as being “bad”, failing most standard measures for compactness.
 % NEED EXAMPLES
 %Need images of TX-25 and PA-07 and OH-07
-
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-07-ConvexHull.png}
+	\caption{OH-07 Convex Hull}
+	\label{fig:oh07ch}
+\end{figure}
 Ohio's 7th congressional disrict is one of the most oddly shaped districts we can find. It has a low PolsbyPopper due to low area and high border length of the district. The Fatness score is low as well due to large swaths of populations that the district bypasses but the convex hull includes. For example, the convex hull of this district would include the major city of Akron and Mansfield. From the shape of the district itself, it is deliberately avoiding thises two cities.
 
-% Image of tx25
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/TX-25-ConvexHull.png}
+	\caption{TX-25 Convex Hull}
+	\label{fig:tx25ch}
+\end{figure}
+
 Another district to focus on is Texas' 25th congressional district. Here we see PolsbyPopper punish the district due to its jagged border in the east and its longer shape. The jagged edges are formed from following the rivers that feed into and leave Lake Buchanan. Furthermore, the low Fatness is primarily due to the convex hull including the city of Waco, Temple and Austin. Specifically, the shape of the district intrudes into Austin. This may have been an attempt at cracking the Democrat majority in the Austin area. The district could have been reformed instead to include Waco rather than an intrusion into Austin. Basically, the district should not have extended as south as it did and should have expanded horizontally rather than vertically.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/PA-07-ConvexHull.png}
+	\caption{PA-07 Convex Hull}
+	\label{fig:pa07ch}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/PA-07-PoliticalResults.png}
+	\caption{PA-07 Political Results}
+	\label{fig:pa07pr}
+\end{figure}
+
+Finally, one of the worst cases for both Polsby-Popper and Fatness is Pennsylvania's 7th congressional district. As you can see, it avoids the area containing West Pikeland that is just west of Philidelpia. If we take a look at the political results of the map, it seems to avoid the mostly Democractic majority precincts in that area. Furthermore, it seems to take the more Republican precincts to make the district more competitive for Republicans.
 
 \subsection{High Fatness and Low Polsby Popper}
 We now move onto the extremeties in the second quadrant. The focus will be on OR-02 and OH-10 as these two districts had the highest fatness score.
@@ -171,22 +194,47 @@ For OH-10, the Polsby-Popper measure rated this district rather low due to its l
 
 A similar case can be made for OR-02. Its Polsby-Popper score was low, landing it in the left half the plot. However, it is also situated comfortable in the second quadrant where the Fatness score is high. We believe that this is a more accurate measure of the compactness of this district. There are some theories to explain the low Polsby-Popper score. If one looks closely at the border of the district, specifically the western and northern half, it is made up of jagged edges. The jagged edges constitute the district following a border represented by rivers to the north and northeast. The western portion is simply following the precincts that have the jagged edges. The many jagged edges increase the perimeter portion of the Polsby-Popper measure, therby resulting in a low score for this district. The convex hull measure is not effected as much by the jagged edges as it would change little in terms of the population that is included. Furthermore, the jagged edges are borders to the Willamette National Forest which would obviously be have a low population density even if it is included.
 
-Again, similar reasonings can be made for OR-04, OR-01, UT-3, and TX-01. Even though OR-01 seems to have a "Pac-Man" shape, the convex hull simply adds the Tillamook State Forest. For the case of UT-03, it comes from the simple fact that the majority of Utah's geography is composed of deserts. Therefore, the population of the convex hull of a district would not have a major difference to the population of the district itself.
-%\begin{figure}[H]
-%	\includegraphics[width=\linewidth]{./figures/OR-04.png}
-%	\caption{Oregon District 06}
-%	\label{fig:or04border}
-%\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OR-04-ConvexHull.png}
+	\caption{Oregon District 04}
+	\label{fig:or04ch}
+\end{figure}
 
-%\begin{figure}[H]
-%	\includegraphics[width=\linewidth]{./figures/OR-01.png}
-%	\caption{Oregon District 01}
-%	\label{fig:or04border}
-%\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OR-01-ConvexHull.png}
+	\caption{Oregon District 01}
+	\label{fig:or01ch}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/UT-03-ConvexHull.png}
+	\caption{Utah District 03}
+	\label{fig:ut03ch}
+\end{figure}
+
+Again, similar reasonings can be made for OR-04, OR-01, and UT-3. Even though OR-01 seems to have a "Pac-Man" shape, the convex hull simply adds the Tillamook State Forest. For the case of UT-03, it comes from the simple fact that the majority of Utah's geography is composed of deserts. Therefore, the population of the convex hull of a district would not have a major difference to the population of the district itself.
 
 It has to be notd that many of Ohio's congressional districts have scored average or above average in regards to the Fatness score while their Polsby-Popper scores have remained low. Ohio's districts are known as the most identifiable cases of gerrymandering \cite{ohiog}. We will narrow our focus onto Ohio's 3rd and 13th congressional districts.
 
-In the case of OH-03, the Polsby-Popper score is low due to the meandering border that goes in and out of the city of Columbus. It extrudes and intrudes in various places, giving it a snowflake look. The average Fatness score is caused by the lack of increased population in the convex hull of the district. The area where the district seemingly avoids may just have lower population densities than the rest of Columbus.
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-03-ConvexHull.png}
+	\caption{Ohio District 03}
+	\label{fig:oh03ch}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-03-PoliticalResults.png}
+	\caption{Ohio District 03}
+	\label{fig:oh03pr}
+\end{figure}
+
+In the case of OH-03, the Polsby-Popper score is low due to the meandering border that goes in and out of the city of Columbus. It extrudes and intrudes in various places, giving it a snowflake look. The average Fatness score is caused by the lack of increased population in the convex hull of the district. The area where the district seemingly avoids may just have lower population densities than the rest of Columbus. However, if we look at the political results of OH-03, we can see that the southern precincts of Columbus has a Republican majority. A case can be made that Columbus' Democratic precincts wre packed together to not dilute the Republican precints near it. A possible better redistricting would have Columbus be split or consolidated rather than the non-contiguous district that is currently implemented.
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/OH-13-ConvexHull.png}
+	\caption{Ohio District 13}
+	\label{fig:oh13ch}
+\end{figure}
 
 If we take a look at the case of OH-13, the convex hull of the district covers the entirety of the city of Akron, which the district itself avoids. The population of Akron is roughly about 200,000. The population of OH-13 is actually around 720,000 which does conveniently explain the above average score it recieves.
 
