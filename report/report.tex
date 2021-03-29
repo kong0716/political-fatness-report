@@ -32,7 +32,7 @@
 	Jeffrey Zhong \\ 112299792
 	\vspace{3ex}
 }
-\date{March 18, 2021}
+\date{March 29, 2021}
 
 \begin{document}
 
@@ -45,7 +45,7 @@
 \section{Abstract}
 %TODO%
 % still a little rough %
-The issue of gerrymandering has long been an issue in the United States, as many criteria varying from state to state are considered in the process of creating fair districting plans. The goal of redistricting is loosely defined and the process often completed by parties with little interest in nonpartisanship. Some instances in the past have used the Polsby-Popper test as one way to calculate compactness as a measure of gerrymandering, and the test generally favors geometrically compact shapes. However, Polsby-Popper does not account for the distribution of the population within the shape and its surroundings, and as such, may unnecessarily punish non-compact districtings. The paper therefore investigates an alternate compactness measure that factors in the distribution of the population alongside the geometry of a districting, with the convex hull. Using the Automated Redistricting System, we calculate the convex hull score alongside the Polsby-Popper score for the districts of several U.S. states. Graphing the results, we examine the extrema in each quadrant to determine the attributes that most affect each measure. It may be of interest to weigh the Polsby-Popper test score and the convex hull score together for a better measure of compactness. 
+The issue of fair congressional districts has long been an issue in the United States, as many criteria varying from state to state are considered in the process of creating fair districting plans. The goal of redistricting is loosely defined and the process often completed by parties with little interest in nonpartisanship. Some instances in the past have used the Polsby-Popper test as one way to calculate compactness and the test generally favors geometrically compact shapes. However, Polsby-Popper does not account for the distribution of the population within the shape and its surroundings, and as such, may unnecessarily punish non-compact districtings. The paper therefore investigates an alternate compactness measure that factors in the distribution of the population alongside the geometry of a districting, with the convex hull. Using the Automated Redistricting System, we calculate the convex hull score alongside the Polsby-Popper score for the districts of several U.S. states. Graphing the results, we examine the extrema in each quadrant to determine the attributes that most affect each measure. It may be of interest to weigh the Polsby-Popper test score and the convex hull score together for a better measure of compactness. 
 
 
 \section{Introduction}
@@ -53,8 +53,6 @@ The issue of gerrymandering has long been an issue in the United States, as many
 The advent of technology, especially in more recent times, has made every aspect of life “more” something. For instance, we are more connected with the Internet and instant communication across the globe than we were with letters, or printed newspapers. It may seem that this intensification of long-distance communication should make us all closer to one another. Yet, it seems that technology has also made mankind more divided, with the decentralization of news outlets or American politics. With the advent of technology, the decennial process of redistricting states with more than one congressional district has become a partisan affair. Fewer districts are competitive now than even twenty years ago such that there is less need to appeal to the other side (\cite{cook}). This has led to the increase polarization of the political forum.
 
 It is easy to call out gerrymandering, yet, at the same time, difficult to give precise measures for it. In Vieth v. Jubelirer, ruled in 2004, the Supreme Court argued that a districting was not gerrymandered due to the lack of a measure to quantify inequality or lack of fairness (\cite{vieth}). As courts – especially the Supreme Court – often rule by precedent, this ruling has been used as an excuse to bring down some cases that made it to the highest court of the land. This has emboldened strategists to make increasingly “unfair” maps. The surge in gerrymandered districting plans is the combination of three factors that all came together at the same time: large political successes for one party, the Republicans, just before drawing districts, the sudden improvement of technology, and the increasing polarization in voting patterns.
-
-%Needs some sources for the claims here%
 
 This comes together in what could be considered a paradox: while there are ever more accurate methods to gerrymander at will, there is no mathematical standard accepted by the courts to identify the practice as of today. Furthermore, state constitutions tend to lag even further behind, because of the amount of the slow legislative process and support required to change them. Only twenty-three states require their congressional districts to be contiguous (\cite{contiguity}). While in practice, this is virtually always the case, it leaves the potential for gerrymandering in over half of the states. (Contiguity refers to the fact that any point of the district must be accessible from any other point of the district without leaving it, except for example if part of it is an island and there is a method of transportation such as a bridge or a regular ferry between both sides.) Furthermore, only eighteen states have any mention of compactness for their congressional districts. Within those eighteen states, a minority have more legal requirements. For instance, Iowa requests that districts not be oddly shaped (the state is almost a rectangle that can be split equally in four rectangles), California asks for districts not to bypass nearby large population areas for more distant populated areas, Arizona requires at least some of the districts to be competitive if feasible, and Rhode Island to represent the state fairly (\cite{contiguity}). Furthermore, there are additonal legal requirements for many state redistricting efforts to have communities of interest be in the same district (\cite{brennan}). Overall, there is a lot of leeway in what can be done by the redistricting committee. 
 
@@ -81,11 +79,11 @@ Here we will propose an alternative to the Polsby-Popper that will be referred t
 	\frac{POP(D)}{POP(CH(D))}
 \]
 
-Where $D$ represents the district $D$, $CH(D)$ is the convex hull that contains $D$, and $POP(D)$ is the population in $D$. This measure utilizes precincts as the base level of a population cluster. Since the bounding circle cuts through some precincts, in those cases, the proportion of the area of the precinct in the convex hull is used to estimate the population of the part of the precinct inside of the bounding circle, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population inside the district borders. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the convex hull should not influence the districts. Once again, a perfect score of 1 comes when the district is its convex hull, and a score approaches 0 when the convex hull encompasses many populous precincts, large areas of land, or a combination of both outside of the district's borders.
+Where $D$ represents the district $D$, $CH(D)$ is the convex hull that contains $D$, and $POP(D)$ is the population in $D$. This measure utilizes precincts as the base level of a population cluster. Since the convex hull cuts through some precincts, in those cases, the proportion of the area of the precinct in the convex hull is used to estimate the population of the part of the precinct inside of the convex hull, yielding good approximations. Since precincts form districts, we do not need to apply any ratio other than 1 for the population inside the district borders. Furthermore, this measure only takes into account the population that is inside the state, as the population outside of the state but inside the convex hull should not influence the districts. Once again, a perfect score of 1 comes when the district is its convex hull, and a score approaches 0 when the convex hull encompasses many populous precincts, large areas of land, or a combination of both outside of the district's borders.
 
 %[We should probably include the code for the two measures here, if anyone feels like adding it. Actually, maybe after each measure, whatever is better.]%
 
-Since these two measures are different, it is interesting to compare them to see when they are similar and when they differ, explain why that is the case, and conclude whether those districts are gerrymandered or not. Using the current congressional districts, here are the data points found (Pennsylvania and North Carolina maps are from 2016).
+Since these two measures are different, it is interesting to compare them to see when they are similar and when they differ, explain why that is the case, and conclude whether those districts are gerrymandered or not. We used a total of nine states: New York, Pennsylvania, Virginia, North Carolina, Georgia, Texas, Utah, Oregon, and Ohio. Using the current congressional districts, here are the data points found (Pennsylvania and North Carolina maps are from 2016).
 
 \section{Results}
 
@@ -95,14 +93,19 @@ Since these two measures are different, it is interesting to compare them to see
 	\label{fig:datapoints}
 \end{figure}
 
-%We need a better name for this section - I changed research to analysis, is that good?
 \section{Analysis}
-From the results, we can see compare each district's Fatness score with its Polsby-Popper score. There is a slight positive correlation between the Fatness and PolsbyPopper scores.
+From the results, we can compare each district's Fatness score with its Polsby-Popper score. There is a slight positive correlation between the Fatness and PolsbyPopper scores.
 To help easily identify the location of specific districts, we will split the graph into four quadrants. The quadrants are to be referred from 1 to 4 starting from the top right in a counterclockwise fashion. We do this to identify extremeties in each of the district scores to see in what cases these two scores may differ wildly.
 
 \subsection{Low Fatness and High Polsby Popper}
 We will make a quick remark on the fourth quadrant. This is the quadrant where we would have a low Fatness score and a high Polsby Popper score. The point of this quadrant is to find the districts which Polsby Popper identifies as a good district but Fatness identifies as a bad district. In essence, if we use Polsby Popper to categorize good and bad districts, this quadrant would represent the false positives. It is mostly empty except for the inclusion of North Carolina's 6th congressional district (the one in use for the 2016 and 2018 elections).
-%Insert NC-06 Convex hull
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{./figures/NC-06-ConvexHull.png}
+	\caption{NC-06 Convex Hull}
+	\label{fig:nc06convexHull}
+\end{figure}
+
 This district is actually near average on the Fatness score and PolsbyPopper score. It does seem to be an average district since it leaves the square shape near Greensboro to include the city of Winston-Salem. The extrusion into Winston-Salem seems to be jarring due to the initial square shape. Furthermore, the two areas excluded both slightly west and east of the center of the district are heavily Democract, which allows the district to elect a Republican by a rather small margin. The area around Durham is then joined with Raleigh for a strongly Democract district, while the Democrat votes west of NC-06 are themselves added into another Republican district. The former Representative of NC-06 chose not to run again and has been replaced by a Democratic challenger in 2020, showing some of the consequences of switching to a fairer map raising the number of Democrat representatives in the state from three to five.
 
 \subsection{High Fatness and High Polsby Popper}
